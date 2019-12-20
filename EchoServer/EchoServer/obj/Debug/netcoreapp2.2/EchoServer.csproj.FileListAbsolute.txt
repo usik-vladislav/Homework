@@ -1,0 +1,11 @@
+C:\Users\Влад\source\repos\EchoServer\EchoServer\bin\Debug\netcoreapp2.2\EchoServer.deps.json
+C:\Users\Влад\source\repos\EchoServer\EchoServer\bin\Debug\netcoreapp2.2\EchoServer.runtimeconfig.json
+C:\Users\Влад\source\repos\EchoServer\EchoServer\bin\Debug\netcoreapp2.2\EchoServer.runtimeconfig.dev.json
+C:\Users\Влад\source\repos\EchoServer\EchoServer\bin\Debug\netcoreapp2.2\EchoServer.dll
+C:\Users\Влад\source\repos\EchoServer\EchoServer\bin\Debug\netcoreapp2.2\EchoServer.pdb
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.csprojAssemblyReference.cache
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.csproj.CoreCompileInputs.cache
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.AssemblyInfoInputs.cache
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.AssemblyInfo.cs
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.dll
+C:\Users\Влад\source\repos\EchoServer\EchoServer\obj\Debug\netcoreapp2.2\EchoServer.pdb
