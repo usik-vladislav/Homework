@@ -1,0 +1,8 @@
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\bin\Release\netcoreapp3.1\Chat.Abstractions.deps.json
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\bin\Release\netcoreapp3.1\Chat.Abstractions.dll
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\bin\Release\netcoreapp3.1\Chat.Abstractions.pdb
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\obj\Release\netcoreapp3.1\Chat.Abstractions.AssemblyInfoInputs.cache
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\obj\Release\netcoreapp3.1\Chat.Abstractions.AssemblyInfo.cs
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\obj\Release\netcoreapp3.1\Chat.Abstractions.csproj.CoreCompileInputs.cache
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\obj\Release\netcoreapp3.1\Chat.Abstractions.dll
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Abstractions\obj\Release\netcoreapp3.1\Chat.Abstractions.pdb

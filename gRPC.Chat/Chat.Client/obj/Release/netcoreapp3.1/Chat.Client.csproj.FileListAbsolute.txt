@@ -1,0 +1,12 @@
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\bin\Release\netcoreapp3.1\Chat.Client.deps.json
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\bin\Release\netcoreapp3.1\Chat.Client.dll
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\bin\Release\netcoreapp3.1\Chat.Client.pdb
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\bin\Release\netcoreapp3.1\Chat.Abstractions.dll
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\bin\Release\netcoreapp3.1\Chat.Abstractions.pdb
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.csprojAssemblyReference.cache
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.AssemblyInfoInputs.cache
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.AssemblyInfo.cs
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.csproj.CoreCompileInputs.cache
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.csproj.CopyComplete
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.dll
+D:\Work\3 course\Architector\gRPC.Chat\Chat.Client\obj\Release\netcoreapp3.1\Chat.Client.pdb

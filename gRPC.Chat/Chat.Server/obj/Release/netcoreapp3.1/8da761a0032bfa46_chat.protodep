@@ -1,0 +1,2 @@
+obj\Release\netcoreapp3.1/Chat.cs \
+obj\Release\netcoreapp3.1/ChatGrpc.cs: ../Protos/chat.proto
