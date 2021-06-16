@@ -6,6 +6,7 @@ using Grpc.Core;
 
 namespace Chat.Client
 {
+	//Объект чата-клиента, подключается к серверу через gRPC
 	public class ChatClient : IChat, IDisposable
 	{
 		public ChatClient(string ip, int port, string name)

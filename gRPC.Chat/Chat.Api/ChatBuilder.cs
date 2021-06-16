@@ -6,6 +6,8 @@ using Chat.Server;
 
 namespace Chat.Api
 {
+	//Класс-фабрика для создания объектов, реализующих интерфейс IChat.
+	//Позволяет создавать объект IChat как клиент и как сервер
 	public static class ChatFactory
 	{
 		public static IChat CreateChatServer(int port, string name,

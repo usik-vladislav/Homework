@@ -7,6 +7,7 @@ using Grpc.Core;
 
 namespace Chat.Server
 {
+	//Объект чата-сервера. Создает сервер через gRPC.
 	public class ChatServer : IChat
 	{
 		public ChatServer(int port, string name, Action<MessageViewModel> getMessageHandle, Action disconnectHandle)

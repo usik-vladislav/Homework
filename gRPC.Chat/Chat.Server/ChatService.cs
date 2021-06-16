@@ -5,6 +5,7 @@ using Grpc.Core;
 
 namespace Chat.Server
 {
+	// Класс реализующий сервис gRPC
 	public class ChatService : ChatRoom.ChatRoomBase
 	{
 		public ChatService(Action<MessageViewModel> getMessageHandle)
