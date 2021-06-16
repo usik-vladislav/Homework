@@ -1,58 +1,38 @@
 ﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using Chat.Abstractions;
-using Chat.Api;
 
 namespace Chat.Window
 {
-	public partial class MainWindow : System.Windows.Window
+	public partial class MainWindow
 	{
-		public string Ip { get; set; }
-		public int Port { get; set; }
-		public string UserName { get; set; }
-
-		private IChat _chat;
+		private readonly ChatViewModel _chatViewModel;
 
 		public MainWindow()
 		{
 			InitializeComponent();
+			_chatViewModel = new ChatViewModel();
+			DataContext = _chatViewModel;
 		}
 
 		private void StartServer_Click(object sender, RoutedEventArgs e)
 		{
-			var portInput = new InputPort(true);
-			portInput.Owner = this;
+			_chatViewModel.IsServer = true;
+			var portInput = new InputPort(_chatViewModel);
 			portInput.Show();
 		}
 
 		private void Connect_Click(object sender, RoutedEventArgs e)
 		{
-			var portInput = new InputPort(false);
-			portInput.Owner = this;
+			_chatViewModel.IsClient = true;
+			var portInput = new InputPort(_chatViewModel);
 			portInput.Show();
-		}
-
-		private void DisconnectHandle()
-		{
-			Dispatcher.Invoke(new ThreadStart(() =>
-			{
-				BStartServer.IsEnabled = true;
-				BConnect.IsEnabled = true;
-				BDisconnect.IsEnabled = false;
-				BSend.IsEnabled = false;
-				ChatText.Text = "";
-				IpText.Text = "";
-				_chat = null;
-			}));
 		}
 
 		private async void Disconnect_Click(object sender, RoutedEventArgs e)
 		{
-			try 
+			try
 			{
-				await _chat.DisconnectAsync();
+				await _chatViewModel.DisconnectAsync();
 				MessageBox.Show("Вы были отключены.");
 			}
 			catch (Exception exception)
@@ -65,43 +45,12 @@ namespace Chat.Window
 		{
 			try
 			{
-				var message = new MessageViewModel(UserName, MessageTb.Text);
-				await _chat.SendMessageAsync(message);
-				MessageTb.Clear();
+				await _chatViewModel.SendMessageAsync();
 			}
 			catch (Exception exception)
 			{
 				MessageBox.Show(exception.Message);
 			}
-		}
-
-		public async Task CreateChat(bool isServer)
-		{
-			try
-			{
-				_chat = isServer
-					? ChatFactory.CreateChatServer(Port, UserName, WriteMessageHandle, DisconnectHandle)
-					: await ChatFactory.CreateChatClient(Ip, Port, UserName, WriteMessageHandle, DisconnectHandle);
-				BStartServer.IsEnabled = false;
-				BConnect.IsEnabled = false;
-				BDisconnect.IsEnabled = true;
-				BSend.IsEnabled = true;
-			}
-			catch (Exception e)
-			{
-				MessageBox.Show(e.Message);
-			}
-		}
-
-		private void WriteMessageHandle(MessageViewModel message)
-		{
-			Dispatcher.Invoke(new ThreadStart(() =>
-				WriteMessage(message.Time + " " + message.Author + ": " + message.Text + "\r\n")));
-		}
-
-		private void WriteMessage(string message)
-		{
-			ChatText.Text += message;
 		}
 	}
 }

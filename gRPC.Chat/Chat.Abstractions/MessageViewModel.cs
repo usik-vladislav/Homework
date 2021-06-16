@@ -4,10 +4,6 @@ namespace Chat.Abstractions
 {
 	public class MessageViewModel
 	{
-		public string Time { get; }
-		public string Author { get; }
-		public string Text { get; }
-
 		public MessageViewModel(string author, string text)
 		{
 			Author = author;
@@ -21,5 +17,9 @@ namespace Chat.Abstractions
 			Text = text;
 			Time = time;
 		}
+
+		public string Time { get; }
+		public string Author { get; }
+		public string Text { get; }
 	}
 }

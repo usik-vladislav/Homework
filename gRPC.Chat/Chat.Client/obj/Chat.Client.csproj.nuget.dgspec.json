@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {}
+    "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {}
   },
   "projects": {
-    "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj": {
+    "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj",
+        "projectUniqueName": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj",
         "projectName": "Chat.Abstractions",
-        "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj",
+        "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj",
         "packagesPath": "C:\\Users\\oladu\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\obj\\",
+        "outputPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,14 +59,14 @@
         }
       }
     },
-    "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {
+    "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj",
+        "projectUniqueName": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj",
         "projectName": "Chat.Client",
-        "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj",
+        "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj",
         "packagesPath": "C:\\Users\\oladu\\.nuget\\packages\\",
-        "outputPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\obj\\",
+        "outputPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj": {
-                "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj"
+              "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj": {
+                "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Abstractions\\Chat.Abstractions.csproj"
               }
             }
           }

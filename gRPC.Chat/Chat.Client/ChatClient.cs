@@ -3,18 +3,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using Chat.Abstractions;
 using Grpc.Core;
-using Channel = Grpc.Core.Channel;
 
 namespace Chat.Client
 {
 	public class ChatClient : IChat, IDisposable
 	{
-		public string Name { get; set; }
-
-		private Channel Channel { get; }
-		private AsyncDuplexStreamingCall<Message, Message> Chat { get; }
-		private Action<MessageViewModel> GetMessageHandle { get; set; }
-
 		public ChatClient(string ip, int port, string name)
 		{
 			Name = name;
@@ -23,25 +16,10 @@ namespace Chat.Client
 			Chat = client.Join();
 		}
 
-		public async Task SetHandlers(Action<MessageViewModel> getMessageHandle, Action disconnectHandle)
-		{
-			GetMessageHandle = getMessageHandle;
-			await SendMessageAsync(new MessageViewModel("System", $"{Name} подключился.")).ConfigureAwait(false);
-
-			_ = Task.Run(async () =>
-			  {
-				  while (Channel.State != ChannelState.Shutdown)
-				  {
-					  if (!await Chat.ResponseStream.MoveNext(CancellationToken.None)) continue;
-					  var message = Chat.ResponseStream.Current;
-					  if (message.Author == "System" && message.Text == "Abort") break;
-					  GetMessageHandle(new MessageViewModel(message.Author, message.Text, message.Time));
-				  }
-
-				  await DisconnectAsync();
-				  disconnectHandle();
-			  });
-		}
+		private Channel Channel { get; }
+		private AsyncDuplexStreamingCall<Message, Message> Chat { get; }
+		private Action<MessageViewModel> GetMessageHandle { get; set; }
+		public string Name { get; set; }
 
 		public async Task SendMessageAsync(MessageViewModel messageViewModel)
 		{
@@ -66,6 +44,26 @@ namespace Chat.Client
 		public void Dispose()
 		{
 			Chat.Dispose();
+		}
+
+		public async Task SetHandlers(Action<MessageViewModel> getMessageHandle, Action disconnectHandle)
+		{
+			GetMessageHandle = getMessageHandle;
+			await SendMessageAsync(new MessageViewModel("System", $"{Name} подключился.")).ConfigureAwait(false);
+
+			_ = Task.Run(async () =>
+			{
+				while (Channel.State != ChannelState.Shutdown)
+				{
+					if (!await Chat.ResponseStream.MoveNext(CancellationToken.None)) continue;
+					var message = Chat.ResponseStream.Current;
+					if (message.Author == "System" && message.Text == "Abort") break;
+					GetMessageHandle(new MessageViewModel(message.Author, message.Text, message.Time));
+				}
+
+				await DisconnectAsync();
+				disconnectHandle();
+			});
 		}
 	}
 }

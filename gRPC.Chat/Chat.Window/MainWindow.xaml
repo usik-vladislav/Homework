@@ -3,39 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Chat.Window"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="220" />
         </Grid.ColumnDefinitions>
-        <TextBlock Name="IpText" HorizontalAlignment="Center" FontSize="18"
-                   Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" ></TextBlock>
+        <TextBlock Name="IpText" Text="{Binding EndPoint}" HorizontalAlignment="Center" FontSize="18"
+                   Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
         <Button Name="BStartServer" Content="Стать сервером" HorizontalAlignment="Center" FontSize="18"
-                Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" 
-                Width="200" Height="30" Click="StartServer_Click"/>
+                Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" IsEnabled="{Binding IsDisconnected}"
+                Width="200" Height="30" Click="StartServer_Click" />
         <Button Name="BConnect" Content="Подключиться" HorizontalAlignment="Center" FontSize="18"
-                Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" 
-                Width="200" Height="30" Click="Connect_Click"/>
-        <Button Name="BDisconnect" Content="Отключиться" HorizontalAlignment="Center" FontSize="18" IsEnabled="False"
-                Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" 
-                Width="200" Height="30" Click="Disconnect_Click"/>
-        <Button Name="BSend" Content="Отправить" HorizontalAlignment="Center" FontSize="18" IsEnabled="False"
-                Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" 
-                Width="200" Height="30" Click="Send_Click"/>
-        <TextBox Name="MessageTb" HorizontalAlignment="Center" Height="30" Grid.Column="0" Grid.Row="4" FontSize="16"
-                 TextWrapping="Wrap" VerticalAlignment="Center" Width="550" VerticalContentAlignment="Center"/>
+                Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsEnabled="{Binding IsDisconnected}"
+                Width="200" Height="30" Click="Connect_Click" />
+        <Button Name="BDisconnect" Content="Отключиться" HorizontalAlignment="Center" FontSize="18"
+                IsEnabled="{Binding IsConnected}"
+                Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"
+                Width="200" Height="30" Click="Disconnect_Click" />
+        <Button Name="BSend" Content="Отправить" HorizontalAlignment="Center" FontSize="18"
+                IsEnabled="{Binding IsConnected}"
+                Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"
+                Width="200" Height="30" Click="Send_Click" />
+        <TextBox Name="MessageTb" Text="{Binding InputText}" HorizontalAlignment="Center" Height="30" Grid.Column="0"
+                 Grid.Row="4" FontSize="16"
+                 TextWrapping="Wrap" VerticalAlignment="Center" Width="550" VerticalContentAlignment="Center" />
         <ScrollViewer Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Margin="10 10 10 10">
-            <TextBlock Name="ChatText"/>
+            <TextBlock Name="ChatText" Text="{Binding ChatText}" />
         </ScrollViewer>
     </Grid>
 </Window>

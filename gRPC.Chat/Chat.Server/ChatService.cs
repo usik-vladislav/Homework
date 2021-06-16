@@ -7,14 +7,14 @@ namespace Chat.Server
 {
 	public class ChatService : ChatRoom.ChatRoomBase
 	{
-		private ServerCallContext Context { get; set; }
-		private IServerStreamWriter<Message> ResponseStream { get; set; }
-		private Action<MessageViewModel> GetMessageHandle { get; set; }
-
 		public ChatService(Action<MessageViewModel> getMessageHandle)
 		{
 			GetMessageHandle = getMessageHandle;
 		}
+
+		private ServerCallContext Context { get; set; }
+		private IServerStreamWriter<Message> ResponseStream { get; set; }
+		private Action<MessageViewModel> GetMessageHandle { get; }
 
 		public async Task SendMessage(Message message)
 		{
@@ -25,7 +25,8 @@ namespace Chat.Server
 			}
 		}
 
-		public override async Task Join(IAsyncStreamReader<Message> requestStream, IServerStreamWriter<Message> responseStream, ServerCallContext context)
+		public override async Task Join(IAsyncStreamReader<Message> requestStream,
+			IServerStreamWriter<Message> responseStream, ServerCallContext context)
 		{
 			if (Context != null)
 			{
@@ -34,9 +35,7 @@ namespace Chat.Server
 					Author = "System", Text = "Abort", Time = DateTime.Now.ToShortTimeString()
 				});
 
-				while (await requestStream.MoveNext() && !context.CancellationToken.IsCancellationRequested)
-				{
-				}
+				while (await requestStream.MoveNext() && !context.CancellationToken.IsCancellationRequested) { }
 			}
 			else
 			{

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Eu8lZQzC/7fJoIXzIGnux8hkt80Z49RZusO4YZ8pl9b6rFuPwjtddWxfbVl/dUq0+t8ZWRoqlWUnabKZZ0wDMA==",
+  "dgSpecHash": "+zLxjqSSmBxGuGHnluFCmFCHn9CMiEkvkceDq+opJA6+JsMnqGVoMCdMdr/iYfPTofa3a11duQx08aCKZpPVZw==",
   "success": true,
-  "projectFilePath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
+  "projectFilePath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oladu\\.nuget\\packages\\google.protobuf\\3.17.2\\google.protobuf.3.17.2.nupkg.sha512",
     "C:\\Users\\oladu\\.nuget\\packages\\grpc\\2.38.0\\grpc.2.38.0.nupkg.sha512",

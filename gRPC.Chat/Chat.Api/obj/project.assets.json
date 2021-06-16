@@ -287,11 +287,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
+      "projectUniqueName": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
       "projectName": "Chat.Api",
-      "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
+      "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Api\\Chat.Api.csproj",
       "packagesPath": "C:\\Users\\oladu\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Api\\obj\\",
+      "outputPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -310,11 +310,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {
-              "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj"
+            "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj": {
+              "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Client\\Chat.Client.csproj"
             },
-            "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Server\\Chat.Server.csproj": {
-              "projectPath": "D:\\Work\\3 course\\Architector\\gRPC.Chat\\Chat.Server\\Chat.Server.csproj"
+            "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Server\\Chat.Server.csproj": {
+              "projectPath": "D:\\Work\\3 course\\Architector\\Homework\\gRPC.Chat\\Chat.Server\\Chat.Server.csproj"
             }
           }
         }

@@ -8,13 +8,13 @@ namespace Chat.Api
 {
 	public static class ChatFactory
 	{
-		public static IChat CreateChatServer(int port, string name, 
+		public static IChat CreateChatServer(int port, string name,
 			Action<MessageViewModel> getMessageHandle, Action disconnectHandle)
 		{
 			return new ChatServer(port, name, getMessageHandle, disconnectHandle);
 		}
 
-		public static async Task<IChat> CreateChatClient(string ip, int port, string name, 
+		public static async Task<IChat> CreateChatClient(string ip, int port, string name,
 			Action<MessageViewModel> getMessageHandle, Action disconnectHandle)
 		{
 			var chatClient = new ChatClient(ip, port, name);

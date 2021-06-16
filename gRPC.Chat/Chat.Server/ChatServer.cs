@@ -9,27 +9,26 @@ namespace Chat.Server
 {
 	public class ChatServer : IChat
 	{
-		public string Name { get; set; }
-
-		private Grpc.Core.Server GrpcServer { get; }
-		private ChatService ChatService { get; }
-		private Action DisconnectHandle { get; }
-
 		public ChatServer(int port, string name, Action<MessageViewModel> getMessageHandle, Action disconnectHandle)
 		{
 			DisconnectHandle = disconnectHandle;
 			Name = name;
 			ChatService = new ChatService(getMessageHandle);
-			using Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0);
+			using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0);
 			socket.Connect("8.8.8.8", 65530);
-			IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+			var endPoint = socket.LocalEndPoint as IPEndPoint;
 			GrpcServer = new Grpc.Core.Server
 			{
-				Services = { ChatRoom.BindService(ChatService) },
-				Ports = { new ServerPort(endPoint?.Address.ToString(), port, ServerCredentials.Insecure) },
+				Services = {ChatRoom.BindService(ChatService)},
+				Ports = {new ServerPort(endPoint?.Address.ToString(), port, ServerCredentials.Insecure)}
 			};
 			GrpcServer.Start();
-        }
+		}
+
+		private Grpc.Core.Server GrpcServer { get; }
+		private ChatService ChatService { get; }
+		private Action DisconnectHandle { get; }
+		public string Name { get; set; }
 
 		public async Task SendMessageAsync(MessageViewModel messageViewModel)
 		{
