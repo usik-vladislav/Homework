@@ -53,6 +53,7 @@ namespace Chat.Window
 					IsClient = false;
 					IsServer = false;
 				}
+
 				OnPropertyChanged(nameof(IsConnected));
 				OnPropertyChanged(nameof(IsDisconnected));
 			}
